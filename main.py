@@ -11,7 +11,7 @@ class MyAgent(MLAgent):
             reward = 0
         return reward
  
-random.seed(1) #seed bepaald het begin getal van de gegevens die je terug krijgt
+random.seed(1)
  
 my_agent = MyAgent()
 random_agent = RandomAgent()
@@ -19,14 +19,10 @@ random_agent = RandomAgent()
 train_and_plot(
     agent=my_agent,
     validation_agent=random_agent,
-    iterations=2,
+    iterations=50,
     trainings=100,
-    validations=1000
-    )
-validation_result = validate(agent_x=my_agent, agent_o=random_agent, iterations=2)
+    validations=1000)
+
+validation_result = validate(agent_x=my_agent, agent_o=random_agent, iterations=50)
  
 plot_validation(validation_result)
-
-
-
-#door deze code ontstaat een grafiek die laat zien hoevaak je hem traint en hoe vaak je hem valideert, iterations is hoe vaak die herhaald word
