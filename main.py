@@ -13,16 +13,18 @@ class MyAgent(MLAgent):
  
 random.seed(1)
  
-my_agent = MyAgent()
+my_agent = MyAgent(alpha=0.1, epsilon=0.1)
 random_agent = RandomAgent()
  
 train_and_plot(
     agent=my_agent,
     validation_agent=random_agent,
-    iterations=50,
+    iterations=100,
     trainings=100,
     validations=1000)
 
-validation_result = validate(agent_x=my_agent, agent_o=random_agent, iterations=50)
+validation_agent = RandomAgent()
+ 
+validation_result = validate(agent_x=my_agent, agent_o=validation_agent, iterations=100)
  
 plot_validation(validation_result)
